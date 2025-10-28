@@ -14,8 +14,25 @@
   "contributes": {
     "commands": [
       {
-        "command": "copy-with-context.helloWorld",
-        "title": "Hello World"
+        "command": "copy-with-context.copyWithContext",
+        "title": "Copy with Context"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "copy-with-context.copyWithContext",
+          "group": "9_cutcopypaste",
+          "when": "editorHasSelection"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "copy-with-context.copyWithContext",
+        "key": "ctrl+shift+c",
+        "mac": "cmd+shift+c",
+        "when": "editorTextFocus && editorHasSelection"
       }
     ]
   },

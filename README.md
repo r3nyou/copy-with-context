@@ -1,71 +1,45 @@
-# copy-with-context README
+# Copy with Context
 
-This is the README for your extension "copy-with-context". After writing up a brief description, we recommend including the following sections.
+複製程式碼時自動包含檔案路徑和行號。
 
-## Features
+## 功能
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+選擇程式碼後，使用此擴展複製，會自動包含：
 
-For example if there is an image subfolder under your extension project workspace:
+- 檔案路徑（相對於工作區）
+- 行號範圍
+- 語法高亮標記
 
-\!\[feature X\]\(images/feature-x.png\)
+## 使用方式
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+1. 選擇任意程式碼
+2. 使用以下任一方式複製：
+   - 按快捷鍵：`Cmd+Shift+C` (Mac) 或 `Ctrl+Shift+C` (Windows/Linux)
+   - 右鍵選單：選擇 "Copy with Context"
+   - 命令面板：`Cmd+Shift+P` 輸入 "Copy with Context"
 
-## Requirements
+## 輸出格式
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+````
+src/extension.ts (lines 10-15)
 
-## Extension Settings
+​```typescript
+export function activate(context: vscode.ExtensionContext) {
+    console.log('Extension activated!');
+}
+​```
+````
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## 支援的語言
 
-For example:
+自動檢測並添加正確的語言標記，支援包括：
 
-This extension contributes the following settings:
+- TypeScript/JavaScript (ts, tsx, js, jsx)
+- Python, Ruby, Go, Rust, Java, C/C++
+- HTML, CSS, SCSS, Vue, Svelte
+- JSON, YAML, XML, Markdown
+- 以及更多...
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+## License
 
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+MIT
